@@ -6,7 +6,7 @@ load_dotenv()
 SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 
 def get_location_suggestions(input_text):
-    """Get autocomplete suggestions for location"""
+    """Get autocomplete suggestions for a location from SerpAPI"""
     params = {
         "engine": "google_autocomplete",
         "q": input_text,
@@ -17,7 +17,7 @@ def get_location_suggestions(input_text):
     return suggestions
 
 def search_local_business(query, location=None, lat=None, lng=None):
-    """Search local businesses by location or live coordinates"""
+    """Search local businesses by location name or coordinates via SerpAPI"""
     if location:
         params = {
             "engine": "google_local",
@@ -25,7 +25,7 @@ def search_local_business(query, location=None, lat=None, lng=None):
             "location": location,
             "api_key": SERPAPI_KEY
         }
-    elif lat and lng:
+    elif lat is not None and lng is not None:
         params = {
             "engine": "google_maps",
             "q": query,

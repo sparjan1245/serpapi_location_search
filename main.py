@@ -8,5 +8,10 @@ def location_suggestions(input: str = Query(...)):
     return get_location_suggestions(input)
 
 @app.get("/search")
-def search_business(query: str, location: str = None, lat: float = None, lng: float = None):
+def search_business(
+    query: str,
+    location: str = None,
+    lat: float = None,
+    lng: float = None
+):
     return search_local_business(query, location, lat, lng)
