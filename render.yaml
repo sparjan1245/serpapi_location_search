@@ -2,4 +2,4 @@ services:
   - type: web
     name: user-api
     env: python
-    startCommand: gunicorn main:app -k uvicorn.workers.UvicornWorker
+    startCommand: gunicorn app:app -k uvicorn.workers.UvicornWorker
