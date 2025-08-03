@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Query
-from app.services import get_location_suggestions, search_local_business
+from services import get_location_suggestions, search_local_business
 
 app = FastAPI()
 
